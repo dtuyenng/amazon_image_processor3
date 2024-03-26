@@ -1,0 +1,22 @@
+.main_container {
+  border: 1px solid green;
+  height: 700px;
+}
+
+.image {
+  background-color: white;
+  height: 90%;
+  width: 100%;
+}
+.image_object {
+  border: 1px solid pink;
+  background-color: pink;
+  height: 210px;
+  width: 200px;
+  margin: 10px;
+}
+
+.image_container {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+}

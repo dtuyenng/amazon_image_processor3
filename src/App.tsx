@@ -34,7 +34,7 @@ function App(): JSX.Element {
     if (lastDotIndex !== -1) {
       return (
         filename.slice(0, lastDotIndex) +
-        "_" +
+        "." +
         label +
         filename.slice(lastDotIndex)
       );
@@ -136,6 +136,11 @@ function App(): JSX.Element {
                   <option value="FRNT">FRNT</option>
                   <option value="BACK">BACK</option>
                   <option value="PT01">PT01</option>
+                  <option value="PT02">PT02</option>
+                  <option value="PT03">PT03</option>
+                  <option value="PT04">PT04</option>
+                  <option value="PT05">PT05</option>
+                  <option value="PT06">PT06</option>
                 </select>
               </div>
             ))}

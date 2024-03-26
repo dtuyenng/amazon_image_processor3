@@ -100,7 +100,7 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>File Picker App</h1>
+        <h1>Amazon Image Processor</h1>
         <label htmlFor="files">Choose JPEG pictures:</label>
         <input
           id="files"

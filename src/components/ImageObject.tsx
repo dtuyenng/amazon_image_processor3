@@ -1,5 +1,3 @@
-import React from "react";
-
 function ImageObject() {
   return (
     <div className="image_object">

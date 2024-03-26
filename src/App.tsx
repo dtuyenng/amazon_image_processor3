@@ -122,7 +122,7 @@ function App(): JSX.Element {
           <div>
             <p>Label for each file:</p>
             {files.map((file, index) => (
-              <div key={index}>
+              <div key={file.name}>
                 <img
                   src={fileContents[index]}
                   alt={`Image ${index}`}
@@ -150,61 +150,3 @@ function App(): JSX.Element {
 }
 
 export default App;
-
-// import { useState, FormEvent } from "react";
-// import "./App.css";
-// import ImageObject from "./components/ImageObject";
-
-// function App() {
-//   const [fileName, setFileName] = useState("");
-
-//   const handleFileChange = (event) => {
-//     const file = event.target.files[0];
-//     setFileName(file ? file.name : "");
-//   };
-
-//   const [count, setCount] = useState(0);
-//   const menuItems = ["Menu 1", "Menu 2", "Menu 3", "Menu 4"];
-
-//   const handleSubmit = (event: FormEvent) => {
-//     event.preventDefault();
-//     console.log("Submitted");
-//   };
-
-//   return (
-//     <>
-//       <input type="file" onChange={handleFileChange} />
-//       {fileName && (
-//         <div className="file-display">
-//           <p>Selected File:</p>
-//           <p>{fileName}</p>
-//         </div>
-//       )}
-//       <div className="main_container">
-//         <form className="main_form" action="post" onSubmit={handleSubmit}>
-//           <input id="image_input" type="file" name="Images" multiple></input>
-
-//           {/* <button type="submit">Upload</button> */}
-
-//           <div className="image_container">
-//             <ImageObject></ImageObject>
-//             <ImageObject></ImageObject>
-//             <ImageObject></ImageObject>
-//             <ImageObject></ImageObject>
-//             <ImageObject></ImageObject>
-//             <ImageObject></ImageObject>
-//           </div>
-
-//           <div>
-//             <label htmlFor="asin">ASIN</label>
-//             <input id="asin" type="text" />
-//           </div>
-
-//           <button type="submit">Process Images</button>
-//         </form>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default App;

@@ -21,6 +21,7 @@ function App(): JSX.Element {
         reader.readAsDataURL(file);
       });
     });
+
     Promise.all(promises)
       .then((results) => setFileContents(results))
       .catch((error) => console.error("Error reading files:", error));
@@ -99,34 +100,25 @@ function App(): JSX.Element {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Amazon Image Processor</h1>
-        <label htmlFor="files">Choose JPEG pictures:</label>
-        <input
-          id="files"
-          type="file"
-          onChange={handleFileChange}
-          accept="image/jpeg"
-          multiple
-        />
-        <div>
-          <label htmlFor="asin">ASIN:</label>
-          <input
-            id="asin"
-            type="text"
-            value={asin}
-            onChange={handleAsinChange}
-          />
-        </div>
+      <h1>Amazon Batch Image Processor</h1>
+      <label htmlFor="files">Choose JPEG pictures:</label>
+      <input
+        id="files"
+        type="file"
+        onChange={handleFileChange}
+        accept="image/jpeg"
+        multiple
+      />
+      <h3>Selected Images</h3>
+      <div className="content_wrapper">
         {files.length > 0 && (
-          <div>
-            <p>Label for each file:</p>
+          <>
             {files.map((file, index) => (
-              <div key={file.name}>
+              <div className="image_container" key={file.name}>
                 <img
+                  className="selectedImage"
                   src={fileContents[index]}
                   alt={`Image ${index}`}
-                  style={{ maxHeight: "100px" }}
                 />
                 <select
                   value={labels[index]}
@@ -144,12 +136,20 @@ function App(): JSX.Element {
                 </select>
               </div>
             ))}
-          </div>
+          </>
         )}
-        {fileContents.length > 0 && (
-          <button onClick={handleDownload}>Download</button>
-        )}
-      </header>
+      </div>
+
+      <div>
+        <label htmlFor="asin">ASIN:</label>
+        <input id="asin" type="text" value={asin} onChange={handleAsinChange} />
+      </div>
+
+      <div className="preview">Preview</div>
+
+      {fileContents.length > 0 && (
+        <button onClick={handleDownload}>Download</button>
+      )}
     </div>
   );
 }

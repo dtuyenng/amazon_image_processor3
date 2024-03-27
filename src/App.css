@@ -1,22 +1,26 @@
-.main_container {
-  border: 1px solid green;
-  height: 700px;
-}
-
-.image {
-  background-color: white;
-  height: 90%;
-  width: 100%;
-}
-.image_object {
-  border: 1px solid pink;
-  background-color: pink;
-  height: 210px;
-  width: 200px;
-  margin: 10px;
-}
-
-.image_container {
+.content_wrapper {
+  width: 700px;
   display: grid;
-  grid-template-columns: 3fr 3fr 3fr;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid green;
+}
+
+.selectedImage {
+  border: 1px solid red;
+  width: 200px;
+}
+.image_container {
+  border: 1px solid pink;
+  width: 200px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.preview {
+  background-color: rgb(223, 223, 223);
+  height: 40px;
+  width: 400px;
 }

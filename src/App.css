@@ -1,26 +1,90 @@
+.app_wrapper {
+  border: 1px solid black;
+  height: 870px;
+  width: 600px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.header {
+  height: 35px;
+  background-color: brown;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  padding-top: 0.4rem;
+}
+
+.files {
+  background-color: blue;
+}
+
+.mid_wrapper {
+  margin: 1rem;
+}
+
 .content_wrapper {
-  width: 700px;
+  height: 630px;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
-  border: 1px solid green;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: #f5f5f5;
+  padding: 0.5rem;
+}
+select {
+  width: 100px;
 }
 
 .selectedImage {
-  border: 1px solid red;
-  width: 200px;
+  width: 164px;
+  border: 3px solid black;
+  border-radius: 5px;
 }
 .image_container {
-  border: 1px solid pink;
-  width: 200px;
-  height: 220px;
+  width: 164px;
+  height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: end;
 }
 
 .preview {
-  background-color: rgb(223, 223, 223);
+  margin-top: -40px;
+  margin-left: 1rem;
   height: 40px;
   width: 400px;
+  width: 300px;
+}
+
+.footer {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.footer > button {
+  width: 200px;
+  height: 50px;
+}
+
+#asin {
+  width: 200px;
+  padding-left: 5px;
+  margin-left: 0.5rem;
+}
+
+.download_button {
+  background: rgb(201, 98, 98);
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.download_button:hover {
+  background: rgb(234, 129, 129);
+}
+
+.download_button:active {
+  background: rgb(147, 70, 70);
 }

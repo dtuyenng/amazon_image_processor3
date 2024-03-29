@@ -40,7 +40,7 @@ function App(): JSX.Element {
         filename.slice(lastDotIndex)
       );
     } else {
-      return filename + "_" + label; // If there is no extension, just append the label
+      return filename + "." + label; // If there is no extension, just append the label
     }
   };
 
@@ -99,57 +99,67 @@ function App(): JSX.Element {
   };
 
   return (
-    <div className="App">
-      <h1>Amazon Batch Image Processor</h1>
-      <label htmlFor="files">Choose JPEG pictures:</label>
-      <input
-        id="files"
-        type="file"
-        onChange={handleFileChange}
-        accept="image/jpeg"
-        multiple
-      />
-      <h3>Selected Images</h3>
-      <div className="content_wrapper">
-        {files.length > 0 && (
-          <>
-            {files.map((file, index) => (
-              <div className="image_container" key={file.name}>
-                <img
-                  className="selectedImage"
-                  src={fileContents[index]}
-                  alt={`Image ${index}`}
-                />
-                <select
-                  value={labels[index]}
-                  onChange={(event) => handleLabelChange(event, index)}
-                >
-                  <option value="MAIN">MAIN</option>
-                  <option value="FRNT">FRNT</option>
-                  <option value="BACK">BACK</option>
-                  <option value="PT01">PT01</option>
-                  <option value="PT02">PT02</option>
-                  <option value="PT03">PT03</option>
-                  <option value="PT04">PT04</option>
-                  <option value="PT05">PT05</option>
-                  <option value="PT06">PT06</option>
-                </select>
-              </div>
-            ))}
-          </>
+    <div className="app_wrapper">
+      <div className="header">Amazon Batch Image Processor</div>
+
+      <div className="mid_wrapper">
+        <input
+          id="files"
+          type="file"
+          onChange={handleFileChange}
+          accept="image/jpeg"
+          multiple
+        />
+        <h4>Selected Images</h4>
+        <div className="content_wrapper">
+          {files.length > 0 && (
+            <>
+              {files.map((file, index) => (
+                <div className="image_container" key={file.name}>
+                  <img
+                    className="selectedImage"
+                    src={fileContents[index]}
+                    alt={`Image ${index}`}
+                  />
+                  <select
+                    value={labels[index]}
+                    onChange={(event) => handleLabelChange(event, index)}
+                  >
+                    <option value="MAIN">MAIN</option>
+                    <option value="FRNT">FRNT</option>
+                    <option value="BACK">BACK</option>
+                    <option value="PT01">PT01</option>
+                    <option value="PT02">PT02</option>
+                    <option value="PT03">PT03</option>
+                    <option value="PT04">PT04</option>
+                    <option value="PT05">PT05</option>
+                    <option value="PT06">PT06</option>
+                  </select>
+                </div>
+              ))}
+            </>
+          )}
+        </div>
+      </div>
+
+      <div className="footer">
+        <div>
+          <label htmlFor="asin">ASIN:</label>
+          <input
+            id="asin"
+            type="text"
+            value={asin}
+            onChange={handleAsinChange}
+          />
+        </div>
+
+        {fileContents.length > 0 && (
+          <button className="download_button" onClick={handleDownload}>
+            Download Images
+          </button>
         )}
       </div>
-
-      <div>
-        <label htmlFor="asin">ASIN:</label>
-        <input id="asin" type="text" value={asin} onChange={handleAsinChange} />
-      </div>
-
-      <div className="preview">Preview</div>
-
-      {fileContents.length > 0 && (
-        <button onClick={handleDownload}>Download</button>
-      )}
+      {fileContents.length > 0 && <div className="preview">Preview: </div>}
     </div>
   );
 }

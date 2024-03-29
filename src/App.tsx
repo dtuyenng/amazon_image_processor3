@@ -35,12 +35,12 @@ function App(): JSX.Element {
     if (lastDotIndex !== -1) {
       return (
         filename.slice(0, lastDotIndex) +
-        "." +
+        "_" +
         label +
         filename.slice(lastDotIndex)
       );
     } else {
-      return filename + "." + label; // If there is no extension, just append the label
+      return filename + "_" + label; // If there is no extension, just append the label
     }
   };
 
@@ -107,7 +107,7 @@ function App(): JSX.Element {
           id="files"
           type="file"
           onChange={handleFileChange}
-          accept="image/jpeg"
+          accept="image/*"
           multiple
         />
         <h4>Selected Images</h4>
@@ -127,6 +127,7 @@ function App(): JSX.Element {
                   >
                     <option value="MAIN">MAIN</option>
                     <option value="FRNT">FRNT</option>
+                    <option value="SIDE">SIDE</option>
                     <option value="BACK">BACK</option>
                     <option value="PT01">PT01</option>
                     <option value="PT02">PT02</option>

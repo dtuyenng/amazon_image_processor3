@@ -100,14 +100,14 @@ function App(): JSX.Element {
 
   return (
     <div className="app_wrapper">
-      <div className="header">Amazon Batch Image Processor</div>
+      <div className="header">Amazon Batch Image Processor V0.2</div>
 
       <div className="mid_wrapper">
         <input
           id="files"
           type="file"
           onChange={handleFileChange}
-          accept="image/*"
+          accept="image/jpeg"
           multiple
         />
         <h4>Selected Images</h4>

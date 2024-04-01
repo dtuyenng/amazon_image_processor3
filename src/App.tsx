@@ -35,12 +35,12 @@ function App(): JSX.Element {
     if (lastDotIndex !== -1) {
       return (
         filename.slice(0, lastDotIndex) +
-        "_" +
+        "." +
         label +
         filename.slice(lastDotIndex)
       );
     } else {
-      return filename + "_" + label; // If there is no extension, just append the label
+      return filename + "." + label + ".jpeg"; // If there is no extension, just append the label
     }
   };
 

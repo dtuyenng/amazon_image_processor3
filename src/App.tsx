@@ -116,7 +116,7 @@ function App(): JSX.Element {
         />
 
         <h4>
-          <span className="steps">2.</span> Selected Images
+          <span className="steps">2.</span> Tag Images
         </h4>
         <div className="content_wrapper">
           {files.length > 0 && (

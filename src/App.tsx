@@ -106,6 +106,7 @@ function App(): JSX.Element {
       </div>
 
       <div className="mid_wrapper">
+        <span className="steps">1. </span>
         <input
           id="files"
           type="file"
@@ -113,7 +114,10 @@ function App(): JSX.Element {
           accept="image/jpeg"
           multiple
         />
-        <h4>Selected Images</h4>
+
+        <h4>
+          <span className="steps">2.</span> Selected Images
+        </h4>
         <div className="content_wrapper">
           {files.length > 0 && (
             <>
@@ -148,6 +152,7 @@ function App(): JSX.Element {
 
       <div className="footer">
         <div>
+          <span className="steps">3. </span>
           <label htmlFor="asin">ASIN:</label>
           <input
             id="asin"
@@ -156,7 +161,7 @@ function App(): JSX.Element {
             onChange={handleAsinChange}
           />
         </div>
-
+        <span className="steps">4.</span>
         {fileContents.length > 0 && (
           <button className="download_button" onClick={handleDownload}>
             Download Images

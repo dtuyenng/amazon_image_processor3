@@ -10,11 +10,12 @@ body {
   border-radius: 30px;
   overflow: hidden;
   margin: 0 auto;
+  box-shadow: 2px 2px 2px rgb(77, 77, 77);
 }
 
 .header {
-  height: 35px;
-  background-color: brown;
+  height: 38px;
+  background-color: rgb(16, 150, 246);
   text-align: center;
   color: white;
   font-size: 1.2rem;
@@ -85,16 +86,22 @@ select {
 }
 
 .download_button {
-  background: rgb(201, 98, 98);
+  background: rgb(16, 150, 246);
   color: white;
   font-size: 1rem;
   border-radius: 10px;
 }
 
 .download_button:hover {
-  background: rgb(234, 129, 129);
+  background: rgb(140, 207, 255);
 }
 
 .download_button:active {
-  background: rgb(147, 70, 70);
+  background: rgb(3, 110, 187);
+}
+
+.steps {
+  font-weight: bold;
+  color: hotpink;
+  font-size: 1.1rem;
 }

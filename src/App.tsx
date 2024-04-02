@@ -100,7 +100,10 @@ function App(): JSX.Element {
 
   return (
     <div className="app_wrapper">
-      <div className="header">Amazon Batch Image Processor V0.2</div>
+      <div className="header">
+        Amazon Batch Image Processor V0.2
+        <div className="author">Author: Andre Nguyen</div>
+      </div>
 
       <div className="mid_wrapper">
         <input
